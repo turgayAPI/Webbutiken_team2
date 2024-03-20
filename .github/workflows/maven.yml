@@ -5,6 +5,10 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+<<<<<<< HEAD
+=======
+
+>>>>>>> c5a386f (updating maven.yml)
 name: Maven Build and Selenium Tests on Push
 
 on:
@@ -35,6 +39,12 @@ jobs:
           cd chromedriver-linux64
           chmod +x chromedriver
           sudo mv chromedriver /usr/local/bin
+<<<<<<< HEAD
+=======
+
+      - name: Build and Test with Maven
+        run: mvn -B clean verify -DskipTests=false -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver
+>>>>>>> c5a386f (updating maven.yml)
 
       - name: Build and Test with Maven
         run: mvn -B clean verify -DskipTests=false -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver
