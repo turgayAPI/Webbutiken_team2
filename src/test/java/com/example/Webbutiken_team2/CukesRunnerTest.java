@@ -14,5 +14,5 @@ import org.junit.runner.RunWith;
         features = "src/test/java/com/example/Webbutiken_team2/resources/features")
 
 
-public class CukesRunner {
+public class CukesRunnerTest {
 }
