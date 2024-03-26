@@ -3,7 +3,7 @@ Feature: Home page //Yevheniia Kornilova
     Given the user on the home page
 
   Scenario: check home pages title
-    Then home pages title is "Webbutiken"
+    Then home pages title is "The Shop"
 
   Scenario: Check if the "Home" link is on the toolbar and leads on the home page
     Then Home link is present
@@ -32,7 +32,7 @@ Feature: Home page //Yevheniia Kornilova
   Scenario: check if [All products] button is present on the home page and navigates to the Product page with all products
     Then the [All products] button is present on the home page
     When click on the [All products] button
-#    Then the user navigates to the Products page        I am waiting for fixing of button [All products]
+    Then the user navigates to the Products page
 
   Scenario: check if copyright is present on the home page
     Then the copyright is present on the page

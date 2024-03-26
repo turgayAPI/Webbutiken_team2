@@ -52,7 +52,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
     }
     @Then("the user goes to the home page")
     public void the_user_goes_to_the_home_page() {
-        String expectedPagesTitle = "Webbutiken";
+        String expectedPagesTitle = "The Shop";
         String actualPagesTitle = driver.getTitle();
         assertEquals(expectedPagesTitle,actualPagesTitle);
     }
@@ -70,7 +70,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
 
     @Then("the user goes to the shop page")
     public void the_user_goes_to_the_shop_page() {
-        String expectedPagesTitle = "Webbutiken";
+        String expectedPagesTitle = "The Shop | Products";
         String actualPagesTitle = driver.getTitle();
         assertEquals(expectedPagesTitle, actualPagesTitle);
 
@@ -91,7 +91,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
     }
     @When("the user goes to the checkout page")
     public void the_user_goes_to_the_checkout_page() {
-        String expectedPagesTitle = "Webbutiken";
+        String expectedPagesTitle = "The Shop | Checkout";
         String actualPagesTitle = driver.getTitle();
         assertEquals(expectedPagesTitle, actualPagesTitle);
 
@@ -127,7 +127,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
     }
     @Then("the user navigates to the Products page")
     public void the_user_navigates_to_the_products_page() {
-        String expectedPagesTitle = "Webbutiken";
+        String expectedPagesTitle = "The Shop | Products";
         String actualPagesTitle = driver.getTitle();
         assertEquals(expectedPagesTitle, actualPagesTitle);
 
@@ -137,7 +137,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
     @Then("the copyright is present on the page")
     public void the_copyright_is_present_on_the_page() {
         boolean isCopyrightIsPresent = driver.findElement(By.xpath(
-                "//p[@class = 'col-md-4 mb-0 text-muted' and text()='© 2023 The Shop']")).isDisplayed();
+                "//p[@class = 'col-md-4 mb-0 text-muted' and text()='© 2024 The Shop']")).isDisplayed();
         assertTrue(isCopyrightIsPresent);
     }
     @Then("titles of navigation links should match:")
