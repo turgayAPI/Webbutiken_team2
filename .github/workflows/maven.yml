@@ -12,6 +12,10 @@ on:
   push:
     branches:
       - main
+      - ^*_branch
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-test:
@@ -20,8 +24,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          ref: main
 
       - name: Set up JDK 21
         uses: actions/setup-java@v2
@@ -36,6 +38,7 @@ jobs:
           cd chromedriver-linux64
           chmod +x chromedriver
           sudo mv chromedriver /usr/local/bin
+          sudo chromedriver -v
 
       - name: Build and Test with Maven
         run: mvn -B clean test -DskipTests=false -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver
