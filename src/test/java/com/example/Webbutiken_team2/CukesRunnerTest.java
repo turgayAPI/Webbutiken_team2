@@ -1,18 +1,17 @@
 package com.example.Webbutiken_team2;
 
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {
-                "html:target/cucumber-reports.html",
-                "pretty"
-        },
-        features = "src/test/java/com/example/Webbutiken_team2/resources/features")
+import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 
 
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("demo_My_Shop")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
 public class CukesRunnerTest {
 }
