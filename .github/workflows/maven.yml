@@ -11,11 +11,11 @@ name: Maven Build and Selenium Tests on Push
 on:
   push:
     branches:
-      - main
-      - ^*_branch
+      - "main"
+      - "*_branch"
   pull_request:
     branches:
-      - main
+      - "main"
 
 jobs:
   build-and-test:
