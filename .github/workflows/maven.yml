@@ -11,11 +11,11 @@ name: Maven Build and Selenium Tests on Push
 on:
   push:
     branches:
-      - main
-      - ^*_branch
+      - "main"
+      - "*_branch"
   pull_request:
     branches:
-      - main
+      - "main"
 
 jobs:
   build-and-test:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Install ChromeDriver
         run: |
-          wget https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chromedriver-linux64.zip
+          wget https://storage.googleapis.com/chrome-for-testing-public/123.0.6312.58/linux64/chromedriver-linux64.zip
           unzip chromedriver-linux64.zip
           cd chromedriver-linux64
           chmod +x chromedriver
