@@ -9,7 +9,7 @@ Feature:Viewing Women's Clothing Products //Turgay
     Then User should see total 6 products from Women's Clothing section
 
 
-  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using a Credit Card //Turgay
+  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using a Credit Card // Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
     And the user clicks the Add to cart button for the first product
