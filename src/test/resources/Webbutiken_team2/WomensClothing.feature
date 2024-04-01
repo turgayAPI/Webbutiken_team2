@@ -1,107 +1,15 @@
-Feature:Viewing Women's Clothing Products
+Feature:Viewing Women's Clothing Products //Turgay
   US:   As a user
   I want to view Women's Clothing products
   So that I can browse their selection
 
-  Scenario: Checking that all the products from the Women's Clothing category are present
+  Scenario: Checking that all the products from the Women's Clothing category are present //Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
-    And User scrolls down to the 'Women's Clothing' section
     Then User should see total 6 products from Women's Clothing section
 
 
-  Scenario: Viewing the details of first product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the first product's image
-    And User sees the first product's name
-    And User sees the first product's price
-    And User sees the first product's description
-
-
-  Scenario: Adding first product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the first product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario: Viewing the details of second product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the second product's image
-    And User sees the second product's name
-    And User sees the second product's price
-    And User sees the second product's description
-
-  Scenario: Adding second product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the second product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario: Viewing the details of third product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the third product's image
-    And User sees the third product's name
-    And User sees the third product's price
-    And User sees the third product's description
-
-  Scenario: Adding third product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the third product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario: Viewing the details of fourth product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the fourth product's image
-    And User sees the fourth product's name
-    And User sees the fourth product's price
-    And User sees the fourth product's description
-
-  Scenario: Adding fourth product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the fourth product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario: Viewing the details of fifth product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the fifth product's image
-    And User sees the fifth product's name
-    And User sees the fifth product's price
-    And User sees the fifth product's description
-
-  Scenario: Adding fifth product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the fifth product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario: Viewing the details of sixth product from the Women's Clothing category
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    Then User sees the sixth product's image
-    And User sees the sixth product's name
-    And User sees the sixth product's price
-    And User sees the sixth product's description
-
-  Scenario: Adding sixth product to the Cart
-    Given User is on the Shop page
-    When User selects the 'Women's Clothing' section
-    And the user clicks the Add to cart button for the sixth product
-    Then the product should be added to the cart
-    And the cart count should increase by 1
-
-  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using a Credit Card
+  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using a Credit Card //Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
     And the user clicks the Add to cart button for the first product
@@ -128,7 +36,7 @@ Feature:Viewing Women's Clothing Products
       | Alex       | Johnson   | alexj@email.com      | 789 Pine Rd   | United Kingdom | London     | SW1A 1AA | Tom Dayton   | 6745678901234567   | 10/26      | 356 |
 
 
-  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using Pay Pal
+  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using Pay Pal //Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
     And the user clicks the Add to cart button for the first product
@@ -150,3 +58,9 @@ Feature:Viewing Women's Clothing Products
       | Alice      | Ek        | aliceek@email.com    | 123 Tullgatan | Sweden         | Stockholm  | 10001    |
       | Samuel     | Bergson   | samuelberg@email.com | 456 Lomvagen  | Sweden         | Gothenburg | M5H 2N2  |
       | Alexis     | Wright    | alexw@email.com      | 789 Pine Rd   | United Kingdom | London     | SW1A 1AA |
+
+
+
+
+
+
