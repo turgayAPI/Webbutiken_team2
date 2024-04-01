@@ -36,7 +36,7 @@ Feature:Viewing Women's Clothing Products //Turgay
       | Alex       | Johnson   | alexj@email.com      | 789 Pine Rd   | United Kingdom | London     | SW1A 1AA | Tom Dayton   | 6745678901234567   | 10/26      | 356 |
 
 
-  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using Pay Pal //Turgay
+  Scenario Outline: End to end test-Completing a Purchase in the Women's Clothing Section Using Pay Pal // Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
     And the user clicks the Add to cart button for the first product

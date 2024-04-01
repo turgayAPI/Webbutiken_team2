@@ -49,9 +49,9 @@ public class WomensClothingStepDef {
         for (int i = 0; i < 3; i++) {
             try {
                 actions.moveToElement(womenClothingBtn).click().perform();
-                break; // Exit the loop if click is successful
+                break;
             } catch (WebDriverException e) {
-                Thread.sleep(1000); // Wait for a second before retrying
+                Thread.sleep(1000);
             }
         }
 
