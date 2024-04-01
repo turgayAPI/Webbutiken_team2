@@ -3,7 +3,7 @@ Feature:Viewing Women's Clothing Products //Turgay
   I want to view Women's Clothing products
   So that I can browse their selection
 
-  Scenario: Checking that all the products from the Women's Clothing category are present // Turgay
+  Scenario: Checking that all the products from the Women's Clothing category are present //  Turgay
     Given User is on the Shop page
     When User selects the 'Women's Clothing' section
     Then User should see total 6 products from Women's Clothing section
