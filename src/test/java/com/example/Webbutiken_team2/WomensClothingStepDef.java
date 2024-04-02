@@ -15,7 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
@@ -42,6 +44,7 @@ public class WomensClothingStepDef {
 
     @When("User selects the 'Women's Clothing' section") //Turgay
     public void user_selects_the_women_s_clothing_section() throws InterruptedException {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement womenClothingBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@onclick=\"renderProducts('women')\"]")));
         Actions actions = new Actions(driver);
@@ -70,8 +73,29 @@ public class WomensClothingStepDef {
 
     @Then("User should see total {int} products from Women's Clothing section") //Turgay
     public void user_should_see_total_products_from_women_s_clothing_section(int totalProduct) {
-        int actualAmountOfAllProducts = driver.findElements(By.xpath("//div[@class='col']")).size();
-        assertEquals(totalProduct, actualAmountOfAllProducts);
+        int womensProductCount = 0;
+        Set<String> uniqueProductIds = new HashSet<>();
+        List<WebElement> allProducts = driver.findElements(By.cssSelector("main#main .col"));
+        for (WebElement product : allProducts) {
+            String onclickAttribute = product.findElement(By.cssSelector("button[onclick*='addToCart']")).getAttribute("onclick");
+            String productId = onclickAttribute.replaceAll("[^0-9]", "");
+
+            if (!uniqueProductIds.contains(productId)) {
+                uniqueProductIds.add(productId);
+                boolean imgContainsWomen = product.findElement(By.cssSelector(".card-img-top")).getAttribute("alt").contains("Women");
+                boolean titleContainsWomen = product.findElement(By.cssSelector(".card-title")).getText().contains("Women");
+                boolean buttonContainsWomen = onclickAttribute.contains("Women");
+
+
+                if (imgContainsWomen && titleContainsWomen && buttonContainsWomen) {
+                    womensProductCount++;
+                }
+            }
+        }
+
+        Assert.assertEquals("The number of women's products does not match the expected value.", totalProduct, womensProductCount);
+
+
     }
 
 
@@ -277,4 +301,6 @@ public class WomensClothingStepDef {
             driver.quit();
         }
     }
+
+
 }
