@@ -73,28 +73,8 @@ public class WomensClothingStepDef {
 
     @Then("User should see total {int} products from Women's Clothing section") //Turgay
     public void user_should_see_total_products_from_women_s_clothing_section(int totalProduct) {
-        int womensProductCount = 0;
-        Set<String> uniqueProductIds = new HashSet<>();
-        List<WebElement> allProducts = driver.findElements(By.cssSelector("main#main .col"));
-        for (WebElement product : allProducts) {
-            String onclickAttribute = product.findElement(By.cssSelector("button[onclick*='addToCart']")).getAttribute("onclick");
-            String productId = onclickAttribute.replaceAll("[^0-9]", "");
-
-            if (!uniqueProductIds.contains(productId)) {
-                uniqueProductIds.add(productId);
-                boolean imgContainsWomen = product.findElement(By.cssSelector(".card-img-top")).getAttribute("alt").contains("Women");
-                boolean titleContainsWomen = product.findElement(By.cssSelector(".card-title")).getText().contains("Women");
-                boolean buttonContainsWomen = onclickAttribute.contains("Women");
-
-
-                if (imgContainsWomen && titleContainsWomen && buttonContainsWomen) {
-                    womensProductCount++;
-                }
-            }
-        }
-
-        Assert.assertEquals("The number of women's products does not match the expected value.", totalProduct, womensProductCount);
-
+        List<WebElement> womensClothingButtons = driver.findElements(By.xpath("//button[contains(@onclick, '\"category\":\"womens clothing\"')]"));
+        Assert.assertEquals("The number of women's products does not match the expected value.", totalProduct,womensClothingButtons.size() );
 
     }
 
