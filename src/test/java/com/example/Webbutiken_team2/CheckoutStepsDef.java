@@ -11,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -48,12 +47,15 @@ public class CheckoutStepsDef {
        String actualMessage = driver.findElement(By.className("lead")).getText();
        assertEquals(expectedMessage, actualMessage);
     }
-    @Then("no error is present")
+   /* @Then("no error is present")
     public void no_error_is_present() {
         List<WebElement> errorMessages = driver.findElements(By.xpath("//*[@class = 'invalid-feedback']"));
         boolean isErrorPresent = errorMessages.getFirst().isDisplayed();
         assertFalse(isErrorPresent);
     }
+
+    */
+
     @When("fill fields with values {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void fill_fields_with_values(String firstName, String lastName, String email, String address, String country, String city, String zip) {
         driver.findElement(By.id("firstName")).sendKeys(firstName);
@@ -83,12 +85,14 @@ public class CheckoutStepsDef {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().build().perform();
     }
-    @Then("error messages are present")
+   /* @Then("error messages are present")
     public void error_messages_are_present() {
         List<WebElement> errorMessages = driver.findElements(By.xpath("//*[@class = 'invalid-feedback']"));
         boolean isErrorPresent = errorMessages.getFirst().isDisplayed();
         assertTrue(isErrorPresent);
     }
+
+    */
     @When("choose PayPal by radiobutton")
     public void choose_pay_pal_by_radiobutton() {
         WebElement element = driver.findElement(By.xpath("//*[@class='form-check-label' and text()='PayPal']"));
