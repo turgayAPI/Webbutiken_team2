@@ -45,10 +45,12 @@ public class SearchStepsDef { //Jaime Lavalle
     }
     @Then("the result should display {string}")
     public void the_result_should_display(String expected_product) {
-        String actualProduct = driver.findElement(By.xpath("/html/body/main/div/div/div/h3")).getText();
+        //String actualProduct = driver.findElement(By.xpath("//div[@class = 'col']")).getText();
+        String actualProduct = driver.findElement(By.xpath("//h3[@class ='card-title fs-4']")).getText();
         Assertions.assertEquals(expected_product, actualProduct);
 
     }
+
 
     //tear down
     @After
