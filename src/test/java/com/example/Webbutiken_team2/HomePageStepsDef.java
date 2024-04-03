@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HomePageStepsDef { //Yevheniia Kornilova
     static WebDriver driver;
 
-    @Before
+    @Before//Yevheniia Kornilova
     public void maximizeWindow(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
@@ -30,45 +30,45 @@ public class HomePageStepsDef { //Yevheniia Kornilova
         driver.manage().window().maximize();
     }
 
-    @Given("the user on the home page")
+    @Given("the user on the home page")//Yevheniia Kornilova
     public void the_user_on_the_home_page() {
         driver.get("https://webshop-agil-testautomatiserare.netlify.app");
     }
-    @Then("home pages title is {string}")
+    @Then("home pages title is {string}")//Yevheniia Kornilova
     public void home_pages_title_is(String expectedTitle) {
         String actualTitle = driver.getTitle();
         assertEquals(expectedTitle, actualTitle);
     }
-    @Then("Home link is present")
+    @Then("Home link is present")//Yevheniia Kornilova
     public void home_link_is_present() {
         boolean isHomeLinkPresent = driver.findElement(By.xpath(
                 "//*[@class = 'nav-link px-2 text-white' and text()='Home']")).isDisplayed();
         assertTrue(isHomeLinkPresent);
     }
-    @When("click on the Home link")
+    @When("click on the Home link")//Yevheniia Kornilova
     public void click_on_the_home_link() {
         driver.findElement(By.xpath(
                 "//*[@class = 'nav-link px-2 text-white' and text()='Home']")).click();
     }
-    @Then("the user goes to the home page")
+    @Then("the user goes to the home page")//Yevheniia Kornilova
     public void the_user_goes_to_the_home_page() {
         String expectedPagesTitle = "The Shop";
         String actualPagesTitle = driver.getTitle();
         assertEquals(expectedPagesTitle,actualPagesTitle);
     }
-    @Then("Shop link is present")
+    @Then("Shop link is present")//Yevheniia Kornilova
     public void shop_link_is_present() {
         boolean isHomeLinkPresent = driver.findElement(By.xpath(
                 "//*[@class = 'nav-link px-2 text-white' and text()='Shop']")).isDisplayed();
         assertTrue(isHomeLinkPresent);
     }
-    @When("click on the Shop link")
+    @When("click on the Shop link")//Yevheniia Kornilova
     public void click_on_the_shop_link() {
         driver.findElement(By.xpath(
                 "//*[@class = 'nav-link px-2 text-white' and text()='Shop']")).click();
     }
 
-    @Then("the user goes to the shop page")
+    @Then("the user goes to the shop page")//Yevheniia Kornilova
     public void the_user_goes_to_the_shop_page() {
         String expectedPagesTitle = "The Shop | Products";
         String actualPagesTitle = driver.getTitle();
@@ -79,17 +79,17 @@ public class HomePageStepsDef { //Yevheniia Kornilova
                 By.xpath("//div[@class = 'col']")));
         assertNotNull(waitForAllProductsDisplaying);
     }
-    @Then("Checkout button is present")
+    @Then("Checkout button is present")//Yevheniia Kornilova
     public void checkout_button_is_present() {
         boolean isCheckoutButtonDisplayed = driver.findElement(By.xpath(
                 "//a[@class = 'btn btn-warning']")).isDisplayed();
         assertTrue(isCheckoutButtonDisplayed);
     }
-    @When("click on the Checkout button")
+    @When("click on the Checkout button")//Yevheniia Kornilova
     public void click_on_the_checkout_button() {
         driver.findElement(By.xpath("//a[@class = 'btn btn-warning']")).click();
     }
-    @When("the user goes to the checkout page")
+    @When("the user goes to the checkout page")//Yevheniia Kornilova
     public void the_user_goes_to_the_checkout_page() {
         String expectedPagesTitle = "The Shop | Checkout";
         String actualPagesTitle = driver.getTitle();
@@ -98,34 +98,34 @@ public class HomePageStepsDef { //Yevheniia Kornilova
         WebElement isCheckoutFormPresent = driver.findElement(By.cssSelector("div[class='row g-5']"));
         assertNotNull(isCheckoutFormPresent);
     }
-    @Then("title on the home page is present")
+    @Then("title on the home page is present")//Yevheniia Kornilova
     public void title_on_the_home_page_is_present() {
         String expectedTitleOnTheHomePage = "This shop is all you need";
         String actualTitleOnTheHomePage = driver.findElement(By.tagName("h2")).getText();
         assertEquals(expectedTitleOnTheHomePage,actualTitleOnTheHomePage);
     }
-    @Then("description of Webshop is present on the home page")
+    @Then("description of Webshop is present on the home page")//Yevheniia Kornilova
     public void description_of_webshop_is_present_on_the_home_page() {
         boolean webshopsDescription = driver.findElement(By.className("lead")).isDisplayed();
         assertTrue(webshopsDescription);
     }
-    @Then("the image with the product is present on the home page")
+    @Then("the image with the product is present on the home page")//Yevheniia Kornilova
     public void the_image_with_the_product_is_present_on_the_home_page() {
        boolean imageOfProductIsPresent = driver.findElement(By.className("rounded-lg-3")).isDisplayed();
        assertTrue(imageOfProductIsPresent);
     }
-    @Then("the [All products] button is present on the home page")
+    @Then("the [All products] button is present on the home page")//Yevheniia Kornilova
     public void the_all_products_button_is_present_on_the_home_page() {
         boolean isTheAllProductsButtonPresent = driver.findElement(By.xpath(
                 "//button[@class = 'btn btn-primary btn-lg px-4 me-md-2 fw-bold' and text()='All products']")).isDisplayed();
         assertTrue(isTheAllProductsButtonPresent);
     }
-    @When("click on the [All products] button")
+    @When("click on the [All products] button")//Yevheniia Kornilova
     public void click_on_the_all_products_button() {
         driver.findElement(By.xpath(
                 "//button[@class = 'btn btn-primary btn-lg px-4 me-md-2 fw-bold' and text()='All products']")).click();
     }
-    @Then("the user navigates to the Products page")
+    @Then("the user navigates to the Products page")//Yevheniia Kornilova
     public void the_user_navigates_to_the_products_page() {
         String expectedPagesTitle = "The Shop | Products";
         String actualPagesTitle = driver.getTitle();
@@ -134,13 +134,13 @@ public class HomePageStepsDef { //Yevheniia Kornilova
         WebElement isAllProductsPresent = driver.findElement(By.id("main"));
         assertNotNull(isAllProductsPresent);
     }
-    @Then("the copyright is present on the page")
+    @Then("the copyright is present on the page")//Yevheniia Kornilova
     public void the_copyright_is_present_on_the_page() {
         boolean isCopyrightIsPresent = driver.findElement(By.xpath(
                 "//p[@class = 'col-md-4 mb-0 text-muted' and text()='© 2024 The Shop']")).isDisplayed();
         assertTrue(isCopyrightIsPresent);
     }
-    @Then("titles of navigation links should match:")
+    @Then("titles of navigation links should match:")//Yevheniia Kornilova
     public void titles_of_navigation_links_should_match(List<String> expectedTitles) {
         List<WebElement> actualTitles = driver.findElements(By.className("nav-item"));
         for (String expectedTitle: expectedTitles){
@@ -155,7 +155,7 @@ public class HomePageStepsDef { //Yevheniia Kornilova
         }
     }
 
-    @After
+    @After//Yevheniia Kornilova
     public void tearDown() {
         if (driver != null) {
             driver.quit();
