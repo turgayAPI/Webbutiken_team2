@@ -43,13 +43,12 @@ public class SearchStepsDef { //Jaime Lavalle
         searchField.sendKeys(searched_product);
 
     }
-    @Then("the result should display {string}")
-    public void the_result_should_display(String expected_product) {
-        //String actualProduct = driver.findElement(By.xpath("//div[@class = 'col']")).getText();
-        String actualProduct = driver.findElement(By.xpath("//h3[@class ='card-title fs-4']")).getText();
-        Assertions.assertEquals(expected_product, actualProduct);
 
-    }
+    @Then("the result should display {string}") public void the_result_should_display(String expected_product) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        List<WebElement> waitForAllProductsDisplaying = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy( By.xpath("//*[@class ='card-title fs-4']")));
+        String actualProduct = driver.findElement(By.xpath("//*[@class ='card-title fs-4']")).getText();
+        Assertions.assertEquals(expected_product, actualProduct); }
 
 
     //tear down
