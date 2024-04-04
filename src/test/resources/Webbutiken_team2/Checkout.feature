@@ -18,6 +18,10 @@ Feature: Checkout page //Yevheniia Kornilova
     And click on the [Continue to checkout] button
     Then no error is present
 
+  Scenario: Check error messages when the fields are not filled//Yevheniia Kornilova
+   Then click on the [Continue to checkout] button
+   And error messages are present
+
   Scenario: check if credit card fields disappear when PayPal method chosen //Yevheniia Kornilova
     When choose PayPal by radiobutton
     Then credit card fields disappear
